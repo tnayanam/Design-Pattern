@@ -1,0 +1,14 @@
+There are three types of design patterns.
+Creational:
+This type deals with object creation and initialization. This pattern gives the program mre flexibility in deciding which objects need to be created for
+a given case.
+ex: Singleton, Factory, Abstract Factory
+
+Structural:
+This type deals with class and object composition.
+This pattern focuses on decoupling interface and implementation of classes and its objects
+ex: adaptor, bridge
+
+Behavioural:
+
+this type deals with communication between classes and objects.
