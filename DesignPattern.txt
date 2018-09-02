@@ -12,3 +12,12 @@ ex: adaptor, bridge
 Behavioural:
 
 this type deals with communication between classes and objects.
+
+Features of Singleton Pattern:
+- Ensure that only one instance of class exists.
+- Provide global instance of that instance by
+  . declaring all constructors of the class to be private
+  . providing static method that returns a reference to the instance
+  . the instance is stored as private static variable
+  
+  
