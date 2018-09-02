@@ -8,12 +8,12 @@ namespace SingletonPattern
     public sealed class Singleton
     {
         public static int count;
-        private static readonly Singleton singleton = new Singleton();
+        private static readonly Lazy<Singleton> singleton = new Lazy<Singleton>(() => new Singleton());
         public static Singleton GetInstance // this is thread safe lazy intialization.
         {
             get
             {
-                return singleton;
+                return singleton.Value;
             }
         }
 
@@ -65,6 +65,8 @@ Press any key to continue . . .
     Press any key to continue . . .
     THIS IS A THREAD SAFE LAZY INITIALIZATION OF SINGLETON
     // Now lets do a Singleton Eager Loading.
-      // This is Singleton Eager Loading. 
+      // This is Singleton Eager Loading.
+      // Lets do Singleton Lazy Loading
+       
 
  */
