@@ -10,7 +10,7 @@ namespace SingletonPattern
         public static int count;
         private static Singleton singleton = null;
         public static readonly object obj = new object();
-        public static Singleton GetInstance
+        public static Singleton GetInstance // this is thread safe lazy intialization.
         {
             get
             {
@@ -77,5 +77,7 @@ count is 2
 from student
 from employee
 Press any key to continue . . .
+
+    .. THIS IS A THREAD SAFE LAZY INITIALIZATION OF SINGLETON
 
  */
