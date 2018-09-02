@@ -9,12 +9,17 @@ namespace SingletonPattern
     {
         public static int count;
         private static Singleton singleton = null;
+        public static readonly object obj = new object();
         public static Singleton GetInstance
         {
             get
             {
-                if (singleton == null)
-                    singleton = new Singleton();
+                lock (obj) // now only one thread can enter into this code block. so other thread wil wait for lock to be
+                           // to be released and by that time first thread would already have initialized the object.
+                {
+                    if (singleton == null)
+                        singleton = new Singleton();
+                }
                 return singleton;
             }
         }
