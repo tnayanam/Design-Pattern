@@ -7,3 +7,6 @@ c:\users\lenovo\documents\visual studio 2015\Projects\SingletonPattern\Singleton
 C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\bin\Debug\SingletonPattern.exe.config
 C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\obj\Debug\SingletonPattern.exe
 C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\obj\Debug\SingletonPattern.pdb
+C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\obj\Debug\SingletonPattern.csprojResolveAssemblyReference.cache
+C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\bin\Debug\SingletonPattern.exe
+C:\Users\lenovo\Desktop\demo\Design-Pattern\SingletonPattern\SingletonPattern\bin\Debug\SingletonPattern.pdb
