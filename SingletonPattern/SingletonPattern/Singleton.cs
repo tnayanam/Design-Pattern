@@ -5,7 +5,7 @@ namespace SingletonPattern
     // public sealed class Singleton // we need sealed here so that nested class cannot directory make instance,
     //because nested class can access the private constructor of parent class thus can make multiple instance,
     // so we need the sealed class.
-    public class Singleton
+    public sealed class Singleton
     {
         public static int count;
         private static Singleton singleton = null;
@@ -32,10 +32,6 @@ namespace SingletonPattern
             Console.WriteLine(message);
         }
 
-        public class DerivedClass : Singleton
-        {
-            // now this is capable to calling the private constructor thus capable of creating the instances.
-        }
     }
 }
 
@@ -59,6 +55,17 @@ from employee
 from student
 count is 2 // IMPORTANT!!
 From derived obj
+Press any key to continue . . .
+
+    // now everything looks to be woring fine but what if two threads come in parallel then before one thread can 
+    // instantiate others haas already passed the null check and gotten inside for object creation
+    // so both the threads has already reached line number 17 to instantiate.
+
+    /// output:
+    count is 1
+count is 2
+from student
+from employee
 Press any key to continue . . .
 
  */
