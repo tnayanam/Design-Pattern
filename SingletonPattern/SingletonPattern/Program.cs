@@ -9,6 +9,8 @@
             Singleton fromStudent = Singleton.GetInstance; // suppose this was needed in student class
             fromStudent.PrintDetails("from student");
             // not both created an instance of the class.
+            Singleton.DerivedClass dervObj = new Singleton.DerivedClass();
+            dervObj.PrintDetails("From derived obj");
         }
     }
 }
