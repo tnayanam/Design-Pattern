@@ -8,23 +8,11 @@ namespace SingletonPattern
     public sealed class Singleton
     {
         public static int count;
-        private static Singleton singleton = null;
-        public static readonly object obj = new object();
+        private static readonly Singleton singleton = new Singleton();
         public static Singleton GetInstance // this is thread safe lazy intialization.
         {
             get
             {
-                // but lock checking is expensive so lets do a duoble lock checking
-                if (singleton == null)
-                {
-                    lock (obj) // now only one thread can enter into this code block. so other thread wil wait for lock to be
-                               // to be released and by that time first thread would already have initialized the object.
-                    {
-                        if (singleton == null)
-                            singleton = new Singleton();
-                    }
-                }
-
                 return singleton;
             }
         }
@@ -66,18 +54,17 @@ from student
 count is 2 // IMPORTANT!!
 From derived obj
 Press any key to continue . . .
-
     // now everything looks to be woring fine but what if two threads come in parallel then before one thread can 
     // instantiate others haas already passed the null check and gotten inside for object creation
     // so both the threads has already reached line number 17 to instantiate.
-
     /// output:
     count is 1
-count is 2
-from student
-from employee
-Press any key to continue . . .
-
-    .. THIS IS A THREAD SAFE LAZY INITIALIZATION OF SINGLETON
+    count is 2
+    from student
+    from employee
+    Press any key to continue . . .
+    THIS IS A THREAD SAFE LAZY INITIALIZATION OF SINGLETON
+    // Now lets do a Singleton Eager Loading.
+      // This is Singleton Eager Loading. 
 
  */
