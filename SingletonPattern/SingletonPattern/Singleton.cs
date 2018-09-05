@@ -7,28 +7,17 @@ namespace SingletonPattern
     // so we need the sealed class.
     public sealed class Singleton
     {
-        public static int count;
-        private static readonly Lazy<Singleton> singleton = new Lazy<Singleton>(() => new Singleton());
-        public static Singleton GetInstance // this is thread safe lazy intialization.
+        private static readonly Singleton instance = new Singleton(); // private means can only be accessed insde this class, static so only one instance, readonly meaning cannot be reassigned
+        private Singleton() { } // To make sure that it does not get, meaning no one can instantiate it outside this class.
+        static Singleton() { }
+        public static Singleton Instance// return as a property
         {
             get
             {
-                return singleton.Value;
+                return instance;
             }
         }
 
-        // private constructor ensures that class does not get instantiated by any external class but from
-        // the class within.
-        private Singleton()
-        {
-            count++;
-            Console.WriteLine($"count is {count}");
-        }
-
-        public void PrintDetails(string message)
-        {
-            Console.WriteLine(message);
-        }
 
     }
 }
